@@ -5,7 +5,7 @@ const router = express.Router();
 const helpers = require('../helpers/loginHelper.js');
 
 router.get('/', (req, res) => {
-    res.send('hi');
+    res.send('Login');
 });
 
 router.post('/', async (req, res) => {
