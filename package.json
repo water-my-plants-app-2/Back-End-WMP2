@@ -1,4 +1,15 @@
 {
+  "name": "server",
+  "version": "1",
+  "description": "backend for water my plants app 2",
+  "main": "index.js",
+  "repository": "https://github.com/cassidyjamesw/WMP2-Back-End.git",
+  "author": "James Cassidy <cassidyjamesw@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^6.2.0",
