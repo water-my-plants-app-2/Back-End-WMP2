@@ -4,10 +4,9 @@ const helpers = require('../helpers/plantsHelper.js')
 const db = require("../config/dbConfig");
 
 // sanity check
-router.get("/", (req, res) => {
-  return res
-    .status(200)
-    .json({ message: "Back end and front end are connected." });
+router.get('/', async (req, res) => {
+  const users = await db('users');
+  res.status(200).json(users);
 });
 
 router.get("/:id/plants", helpers.protected, async (req, res) => {

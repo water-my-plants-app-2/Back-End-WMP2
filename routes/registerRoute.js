@@ -4,14 +4,14 @@ const express = require('express');
 const router = express.Router();
 const helpers = require('../helpers/loginHelper.js');
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
     res.send('Register');
 });
 
 router.post("/", async (req, res) => {
     try {
         const userCredentials = req.body;
-        if(userCredentials.username && userCredentials.password && userCredentials.email){
+        if(userCredentials.username && userCredentials.password && userCredentials.email && userCredentials.phone){
             const hash = bcrypt.hashSync(userCredentials.password, 12);
             userCredentials.password = hash;
     
