@@ -18,7 +18,7 @@ router.post('/', async (req, res) => {
 
             if (userForCheck && bcrypt.compareSync(password, userForCheck.password)) {
                 const token = helpers.generateToken(userForCheck);
-                res.status(200).json({ message: `Welcome ${userForCheck.username}`, token });
+                res.status(200).json({ userForCheck, token });
             } else {
                 res.status(401).json({message: "Your login attempt failed. Please check login and password and try again"});
             }
