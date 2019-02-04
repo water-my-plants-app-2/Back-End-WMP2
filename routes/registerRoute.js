@@ -22,6 +22,7 @@ router.post("/", async (req, res) => {
             res.status(400).json({message: "Please fill all the required fields"});
         }
     } catch (err) {
+        console.log(err);
         res.status(500).json({ message: "Register failed. Please try again" });
     }
 });
