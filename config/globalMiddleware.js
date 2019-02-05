@@ -4,12 +4,12 @@ const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
 
-const enableCors = function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE");
-  res.header("Access-Control-Allow-Headers", "Content-Type");
-  next();
-};
+// const enableCors = function(req, res, next) {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE");
+//   res.header("Access-Control-Allow-Headers", "Content-Type");
+//   next();
+// };
 
 // const corsOptions = {
 //   origin: function(origin, callback) {
@@ -23,5 +23,5 @@ const enableCors = function(req, res, next) {
 // };
 
 module.exports = server => {
-  server.use(express.json(), enableCors, cors(), helmet());
+  server.use(express.json(), enableCors, cors({credentials: true, origin: true}), helmet());
 };
