@@ -23,5 +23,5 @@ const enableCors = function(req, res, next) {
 // };
 
 module.exports = server => {
-  server.use(express.json(), enableCors(), cors(), helmet());
+  server.use(express.json(), enableCors, cors(), helmet());
 };
