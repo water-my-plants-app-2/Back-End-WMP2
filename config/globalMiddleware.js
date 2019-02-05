@@ -23,5 +23,5 @@ const helmet = require("helmet");
 // };
 
 module.exports = server => {
-  server.use(express.json(), enableCors, cors({credentials: true, origin: true}), helmet());
+  server.use(express.json(), cors({credentials: true, origin: true}), helmet());
 };
