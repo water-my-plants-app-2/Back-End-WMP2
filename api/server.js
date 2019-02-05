@@ -14,7 +14,7 @@ const server = express();
 applyGlobalMiddleware(server);
 
 // routes
-server.use("/api/users/", userRoutes);
+
 server.use("/api/login/", loginRoute);
 server.use("/api/register/", registerRoute);
 server.use("/api/users/", userRoutes);
