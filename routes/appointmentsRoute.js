@@ -5,6 +5,7 @@ const schedule = require("node-schedule");
 const express = require("express");
 const router = express.Router();
 const twilio = require("twilio");
+const appointmentSetter = require("../helpers/appointmentSetter");
 const client = twilio(
   process.env.TWILIO_ACCOUNT_SID,
   process.env.TWILIO_AUTH_TOKEN
@@ -31,7 +32,14 @@ router.get("/", (req, res) => {
 });
 
 router.post("/setschedule", async (req, res) => {
-  // const waterDate = req.body;
+  try {
+    console.log(req.body);
+    date = req.body;
+    appointmentSetter(date);
+    res.status(200);
+  } catch (err) {
+    res.status(500);
+  }
 });
 
 module.exports = router;
