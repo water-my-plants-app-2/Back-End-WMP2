@@ -15,8 +15,8 @@ router.get("/", (req, res) => {
   client.messages
     .create({
       from: process.env.TWILIO_PHONE_NUMBER,
-      body: "Hello team!",
-      to: process.env.TTWILIO_TARGET_NUMBER
+      body: "Water yer plants!!",
+      to: process.env.TWILIO_TARGET_NUMBER
     })
     .then(message => console.log(message.sid))
     .done();
