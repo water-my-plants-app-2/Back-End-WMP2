@@ -21,8 +21,10 @@
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.23",
     "morgan": "^1.9.1",
+    "node-wget": "^0.4.3",
     "sqlite3": "^4.0.6",
-    "twilio": "^3.28.0"
+    "twilio": "^3.28.0",
+    "wget": "^0.0.1"
   },
   "devDependencies": {
     "nodemon": "^1.18.9"
