@@ -40,6 +40,7 @@ router.post("/setschedule", async (req, res) => {
     cron.schedule(date, () => {
       console.log("---------------------");
       console.log("Running Cron Job");
+      // SEND GET //
       client.messages
         .create({
           from: process.env.TWILIO_PHONE_NUMBER,
@@ -48,7 +49,6 @@ router.post("/setschedule", async (req, res) => {
         })
         .then(message => console.log(message.sid))
         .done();
-      // SEND GET //
     });
     res.status(200);
   } catch (err) {
