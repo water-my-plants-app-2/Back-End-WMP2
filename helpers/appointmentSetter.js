@@ -9,6 +9,7 @@ module.exports = {
 };
 
 function appointmentSetter(date) {
+  console.log("Can i see this");
   cron.schedule(date, function() {
     console.log("---------------------");
     console.log("Running Cron Job");
