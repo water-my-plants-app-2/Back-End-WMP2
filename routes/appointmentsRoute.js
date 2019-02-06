@@ -1,13 +1,8 @@
 const db = require("../config/dbConfig.js");
-const momentTimeZone = require("moment-timezone");
-const moment = require("moment");
-const schedule = require("node-schedule");
 const express = require("express");
-const wget = require("node-wget");
 const router = express.Router();
 const twilio = require("twilio");
 const cron = require("node-cron");
-const fetch = require("fetch");
 const client = twilio(
   process.env.TWILIO_ACCOUNT_SID,
   process.env.TWILIO_AUTH_TOKEN
