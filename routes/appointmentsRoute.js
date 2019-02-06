@@ -9,7 +9,7 @@ const client = twilio(
   process.env.TWILIO_AUTH_TOKEN
 );
 
-server.get("/message", (req, res) => {
+router.get("/", (req, res) => {
   console.log("In message area\n");
 
   client.messages
