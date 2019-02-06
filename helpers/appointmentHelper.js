@@ -2,9 +2,14 @@ require("dotenv").config();
 const wget = require("node-wget");
 
 module.exports = {
-  remindAppointment
+  remindAppointment,
+  scheduleSetter
 };
 
-function remindAppointment(user) {
+function remindAppointment() {
   wget("localhost:5000/api/message");
 }
+
+var scheduleSetter = schedule.scheduleJob(date, function() {
+  remindAppointment();
+});
