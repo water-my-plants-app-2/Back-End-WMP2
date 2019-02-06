@@ -1,5 +1,6 @@
 require("dotenv").config();
 const wget = require("node-wget");
+const schedule = require("node-schedule");
 
 module.exports = {
   remindAppointment,
