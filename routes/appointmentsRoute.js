@@ -31,6 +31,7 @@ router.get("/", (req, res) => {
 router.post("/setschedule", async (req, res) => {
   try {
     date = req.body.date;
+    number = req.body.number;
     console.log(date);
     cron.schedule(date, () => {
       console.log("---------------------");
@@ -40,7 +41,7 @@ router.post("/setschedule", async (req, res) => {
         .create({
           from: process.env.TWILIO_PHONE_NUMBER,
           body: "Water yer plants!!",
-          to: process.env.TWILIO_TARGET_NUMBER
+          to: number
         })
         .then(message => console.log(message.sid))
         .done();
